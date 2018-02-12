@@ -3,10 +3,8 @@
 <html>
 <head>
   <script>
-    alert("Umm");
-  function showDiv(){
-    document.getElementById('wannahide').style.display="center-block";
-  }
+    //alert("Umm"); 
+  
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,7 +44,7 @@
         
         <!--welcome-message-->
         <header class="welcome-message text-center">
-          <h1><span class="rotate">Help the Mankind! , Blood is precious!</span></h1>
+          <h1><span class="rotate">Help the Mankind! , Blood is precious! , Save a life. It feels wonderful</span></h1>
         </header>
         <!--welcome-message end--> 
         
@@ -57,10 +55,10 @@
               
                 <div class="input-group" >
                   <!--<input type="email" class="form-control" placeholder="Email" required value="" name="EMAIL">-->
-                  <button type="submit" class="btn btn-default" style="margin-left: -25px;" id="mc-subscribe" value="Search" name="search" onclick="showDiv()">Search! <i class="fa fa-search"></i></button>
+                  <a href="search/profile2.html" target="_blank"><button type="submit" class="btn btn-default" style="margin-left: -25px;" id="mc-subscribe" value="Search" name="search">Search! <i class="fa fa-search"></i></button></a>
 
                   <span class="input-group-btn">
-                  <a href=""><button type="submit" class="btn btn-default" id="mc-subscribe" value="Register" name="register">Register<i class="fa fa-paper-plane"></i></button></a>
+                  <a href="register/index.html"><button type="submit" class="btn btn-default" id="mc-subscribe" value="Register" name="register">Register<i class="fa fa-paper-plane"></i></button></a>
                   </span> 
                 </div>
               <p id="mc-notification"></p>
@@ -68,10 +66,12 @@
           </div>
 
           <div id = "wannahide" style="display: none;">
+            <form>
             <input type="email" class="form-control" placeholder="Email" required value="" name="EMAIL"><br>
             <input type="email" class="form-control" placeholder="Email" required value="" name="EMAIL"><br>
             <input type="email" class="form-control" placeholder="Email" required value="" name="EMAIL"><br>
             <a href=""><button type="submit" class="btn btn-default" id="mc-subscribe" value="Register" name="register">Register<i class="fa fa-paper-plane"></i></button></a><br>
+          </form>
           </div>
 
         </div>
@@ -110,24 +110,23 @@
 
 <section class="features section-spacing">
   <div class="container">
-    <h2 class="text-center">Featered services</h2>
+    <h2 class="text-center">Featured services</h2>
     <div class="row">
       <div class="col-md-6">
         <div class="wow fadeInUp product-features row">
           <div class="col-md-2 col-sm-2 col-xs-2 text-center"><i class="fa fa-rocket fa-3x"></i></div>
           <div class="col-md-10 col-sm-10 col-xs-10"> 
             <!--features 3-->
-            <h4>guxsutsc</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, beatae, esse, aspernatur, alias odio numquam incidunt perspiciatis aliquid voluptate sapiente.</p>
-            <!--features 3 end--> 
+            <h4>Looking for donors?</h4>
+            <p>No issue! You are at the right place! You are just one click away to find a donor in your city!</p> 
           </div>
         </div>
         <div class="wow fadeInUp product-features row">
           <div class="col-md-2 col-sm-2 col-xs-2 text-center"><i class="fa fa-bullhorn fa-3x"></i></div>
           <div class="col-md-10 col-sm-10 col-xs-10">
             <!--features 4-->
-            <h4>Product Development</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, beatae, esse, aspernatur, alias odio numquam incidunt perspiciatis aliquid voluptate sapiente.</p>
+            <h4>Need specific blood type</h4>
+            <p>Woah! This is covered too! You can search through donors through our search feature and also get their email-ids immediately</p>
             <!--features 4 end--> 
           </div>
         </div>
@@ -137,8 +136,8 @@
           <div class="col-md-2 col-sm-2 col-xs-2 text-center"><i class="fa fa-bicycle fa-3x"></i></div>
           <div class="col-md-10 col-sm-10 col-xs-10"> 
             <!--features 3-->
-            <h4>Digital Marketing</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, beatae, esse, aspernatur, alias odio numquam incidunt perspiciatis aliquid voluptate sapiente.</p>
+            <h4>Efficient search</h4>
+            <p>You can find donors in your city, in your district and tgus get the required blood at the nearest place when it is required the most</p>
             <!--features 3 end--> 
           </div>
         </div>
@@ -146,8 +145,8 @@
           <div class="col-md-2 col-sm-2 col-xs-2 text-center"><i class="fa fa-paper-plane-o fa-3x"></i></div>
           <div class="col-md-10 col-sm-10 col-xs-10">
             <!--features 4-->
-            <h4>Social Advertise</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, beatae, esse, aspernatur, alias odio numquam incidunt perspiciatis aliquid voluptate sapiente.</p>
+            <h4>Eager to help out people?</h4>
+            <p>Register with us! We'll definitely help you complete this noble cause. Blood donation camps will themselves contact you</p>
             <!--features 4 end--> 
           </div>
         </div>
@@ -203,7 +202,7 @@
         
         <!--contact form-->
         
-        <div class="contact-form">
+        <!--<div class="contact-form">
           <form role="form" action="" method="post" id="contact-form">
             <input type="text" class="wow fadeInUp form-control" name="name" id="name" placeholder="Your Name" required>
             <input type="email" class="wow fadeInUp form-control" name="email" id="email" placeholder="Email Address" required>
@@ -212,12 +211,7 @@
           </form>
           
           <!--contact form end-->
-          <div class="success-cf">
-            <p>Thank You! Your message has been sent.</p>
-          </div>
-          <div class="error-cf">
-            <p>Something went wrong, try refreshing and submitting the form again.</p>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -242,7 +236,7 @@
         
         <!--social end--> 
         
-        <small class="wow fadeInUp">© 2015 All rights reserved. Made with <i class="fa fa-heart pulse"></i> by <a href="http://www.designstub.com/">Designstub</a></small> </div>
+         </div>
     </div>
   </div>
 </footer>

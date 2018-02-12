@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style2.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+	.form-control::-webkit-input-placeholder {
+ color: #727272;
+ font-weight: 300;
+}
+ .form-control:-moz-placeholder {
+ color: #727272;
+ font-weight: 300;
+}
+ .form-control::-moz-placeholder {
+ color: #727272;
+ font-weight: 300;
+}
+ .form-control:-ms-input-placeholder {
+ color: #727272;
+ font-weight: 300;
+}
+.sub-form {
+	padding-top: 1.5em;
+}
+.center-block {
+	float: none;
+}
+.form-control {
+	background-color: #FFF842;
+	border: 1px solid #fff;
+	box-shadow: none;
+	height: 50px;
+	font-weight: 300;
+}
+.form-control:focus {
+	border-color: #fff;
+	outline: 0;
+	box-shadow: none;
+}
+</style>
+<body>
+<!--<header style="background:white;">
+
+    <div class="header-row1">
+      <a href="http://www.iitbbs.ac.in"><img src='http://www.iitbbs.ac.in/images/iitbbs_logo.png' height='100%' alt='IIT Bhubaneswar'/></a>
+      <a href="http://2018.almafiesta.com/"><img src='http://almafiesta.com/alma.png' height='100%' alt='almafiesta'/></a>
+    </div>
+  </header>
+     <div class="containerh teal borderYtoX">
+      <a href="abt.html">ABOUT</a>
+      <a href="signup.html">SIGNUP</a>
+      <a href="ldr.html">LEADERBOARD</a>
+      <a href="rules.html">RULES</a>
+      <a href="cus.html">CONTACT US</a>
+  </div>-->
+<!--<?php
+if (! function_exists('array_column')) {
+    function array_column(array $input, $columnKey, $indexKey = null) {
+        $array = array();
+        foreach ($input as $value) {
+            if ( !array_key_exists($columnKey, $value)) {
+                trigger_error("Key \"$columnKey\" does not exist in array");
+                return false;
+            }
+            if (is_null($indexKey)) {
+                $array[] = $value[$columnKey];
+            }
+            else {
+                if ( !array_key_exists($indexKey, $value)) {
+                    trigger_error("Key \"$indexKey\" does not exist in array");
+                    return false;
+                }
+                if ( ! is_scalar($value[$indexKey])) {
+                    trigger_error("Key \"$indexKey\" does not contain scalar value");
+                    return false;
+                }
+                $array[$value[$indexKey]] = $value[$columnKey];
+            }
+        }
+        return $array;
+    }
+}?>-->
+	<h1>Your profile</h1>
+	<div class = "wannahide" style="align-content: center; margin-left: 45%" >
+		<form action="search.php" method="post" enctype="multipart/form-data" class="registerform">	
+            <div class="w3l-num">
+					<label class="head">City<span class="w3l-star"> * </span></label>
+					<input type="text"  name="City" placeholder="" required="">
+				</div>
+			<div class="w3l-sym">
+					<label class="head">District<span class="w3l-star"> * </span></label>
+					<input type="text" name="District" placeholder="" required="">
+			</div>
+            <label class="w3l-star">Blood Group<span class="w3l-star"> * </span></label>	
+				<select class="category2" required="">
+						<option value="">A+</option>
+						<option value="">A-</option>
+						<option value="">B+</option>
+						<option value="">B-</option>
+						<option value="">AB+</option>
+						<option value="">AB-</option>
+						<option value="">O+</option>
+						<option value="">O-</option>
+					</select><br>
+           <button type="submit" style="background: pink; margin-left: 5%" class="btn btn-default" id="mc-subscribe" value="Register" name="register">Submit<i class="fa fa-paper-plane"></i></button>
+        </form>>
+          </div>
+          
+	<!--<?php 
+	<!--<?php 
+         
+       $conn = mysql_connect ($servername , $username , $password) or die("unable to connect to host");  
+       $sql = mysql_select_db ('alma18int',$conn) or die("unable to connect to database");
+		$s=$_COOKIE['Username'];	   
+	   $sql3=mysql_query("SELECT * FROM kryptex WHERE Username='$s'");
+	   $userinfo = array();
+		while ($row_user = mysql_fetch_assoc($sql3))
+		$userinfo[] = $row_user;
+	   //array_multisort(array_column($userinfo, 'Level'), SORT_DESC,$userinfo);?>
+<h1>Welcome<span style="color:#FB667A"> <?php echo $s?></span></h1>
+
+<table class="container">
+	<tbody>
+	<?php // start a table tag in the HTML
+//$count=1;
+foreach ($userinfo as $user){   //Creates a loop to loop through results
+echo "<tr><td>Username</td><td>".$user['Username']."</td></tr><tr><td>Email-id</td>"."<td>" . $user['Email'] . "</td></tr>
+<tr><td>College</td><td>" . $user['School'] . "</td></tr><tr><td>Mobile Number</td><td>".$user['Mobno']."</td></tr>";  
+//$count=$count+1;
+}
+
+$sql3=mysql_query("SELECT * FROM kryptexleaderboard");
+	   $userinfo = array();
+		while ($row_user = mysql_fetch_assoc($sql3))
+		$userinfo[] = $row_user;
+	   array_multisort(array_column($userinfo, 'Level'), SORT_DESC,$userinfo);
+	   $count=1;
+	   foreach ($userinfo as $user)
+	   {
+		   if($user['Username']==$s)
+			   break;
+		   else
+			   $count=$count+1;
+	   }
+	   settype($count,"string");
+	   echo "<tr><td>Level</td><td>".$user['Level']."</td></tr><tr><td>Rank</td><td>".$count."</td></tr>";
+
+echo "</table>";
+		?>-->
+<table class = "container">
+<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Email id</th>
+			<th>City</th>
+			<th>District</th>
+			<th>Blood Group</th>
+			
+		</tr>
+		<tr>
+			<td>Qwbecrdteyf</td>
+			<td>qawbecrdteyf@gmail.com</td>
+			<td>Parel</td>
+			<td>Mumbai</td>
+			<td>B+</td>
+		</tr>
+
+		<tr>
+			<td>Qwbecrdteyf</td>
+			<td>qawbecrdteyf@gmail.com</td>
+			<td>Parel</td>
+			<td>Mumbai</td>
+			<td>B+</td>
+		</tr>
+    <tr>
+			<td>Qwbecrdteyf</td>
+			<td>qawbecrdteyf@gmail.com</td>
+			<td>Parel</td>
+			<td>Mumbai</td>
+			<td>B+</td>
+		</tr>
+    <tr>
+			<td>Qwbecrdteyf</td>
+			<td>qawbecrdteyf@gmail.com</td>
+			<td>Parel</td>
+			<td>Mumbai</td>
+			<td>B+</td>
+		</tr>
+    <tr>
+			<td>Qwbecrdteyf</td>
+			<td>qawbecrdteyf@gmail.com</td>
+			<td>Parel</td>
+			<td>Mumbai</td>
+			<td>B+</td>
+		</tr>
+	</tbody>
+</table>
+
+<!--<div class= "rowff"><strong></br><h5 style="color: white; font-size: 16px;">
+     <a href="Almafiesta.com" style="text-align: center;margin: auto;">Almafiesta </a>© Copyright 2018, All Rights Reserved |Web Development Team|</h5></strong></div>-->
+</body>
+</html>
